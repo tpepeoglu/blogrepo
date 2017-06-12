@@ -22,6 +22,11 @@ Route::get('/makale/{id}','MakaleController@makaleDetay');
 Route::get('/home','MakaleController@yeniMakale');
 Route::post('/home','MakaleController@makaleEkle');
 Route::get('/','MakaleController@makaleGetir');
+Route::get('/home/sonyazilar','MakaleController@makaleProfileGetir');
+
+Route::get('/home/duzenle/{id}','MakaleController@makaleDuzenle');
+Route::post('/home/duzenle/{id}','MakaleController@makaleGuncelle');
+Route::get('/home/sil/{id}','MakaleController@makaleSil');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
