@@ -11,8 +11,9 @@
     </div>
 </div>
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#">Yeni Makale Ekle</a></li>
-        <li><a href="#">Son Yazılar</a></li>
+        <li class="active"><a href="home">Yeni Makale Ekle</a></li>
+        <li><a href="home/sonyazilar">Son Yazılar</a></li>
+        <li><a href="">Makale Düzenle</a></li>
     </ul>
 
 </br>
@@ -40,9 +41,9 @@
                         <div class="form-group">
                             <button class="btn btn-success"> Kaydet</button>
                         </div>
+                        </div>    </form>
                     </div>
+                </div>
         </div>
-                        </form>
-            </div></div>
-</div>
+    </div>
 @endsection

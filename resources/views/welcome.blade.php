@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Taraftarın gözünden</title>
+        <title>Bir hayalim var..</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -59,16 +59,17 @@
                 <div class="page-header">
                     <h1>BLOG UYGULAMASI</br><small>Daha bitmedi başlangıçlar </small></h1>
                 </div></div>
-                       <div class="row" class="col-sm-8 blog-main">
-                         @foreach($makaleler as $makale)
+        <div class="row">
+        <div class="col-sm-8 blog-main" class="col-md-8">
+            <div class="blog-post">
+            @foreach($makaleler as $makale)
+                <a href="makale/{{$makale->id}}" style="color: #636b6f"><h2 class="blog-post-title">{{$makale->baslik}}</h2></a>
+                <small>Okunma Sayısı : {{$makale->okusay}}</small></br>
+                <p style="font-family: 'Raleway', sans-serif"> <b>{{$makale->icerik}}</b></p>
+             @endforeach</br>
+            </div>
+        </div>
 
-                  <div class="blog-post">
-                     <a href="makale/{{$makale->$id}}"><h2 class="blog-post-title">{{$makale->baslik}}</h2></a>
-
-                      </br>
-                      <p>{{$makale->icerik}}</p>
-                  </div>
-                        @endforeach
-                       </div>
-    </body>
+        </div></div></body>
 </html>
+
