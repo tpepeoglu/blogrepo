@@ -63,7 +63,7 @@
         <div class="col-sm-8 blog-main" class="col-md-8">
             <div class="blog-post">
             @foreach($makaleler as $makale)
-                <a href="makale/{{$makale->id}}" style="color: #636b6f"><h2 class="blog-post-title">{{$makale->baslik}}</h2></a>
+                <a href="makale/{{$makale->slug}}" style="color: #636b6f"><h2 class="blog-post-title">{{$makale->baslik}}</h2></a>
                 <small>Okunma Sayısı : {{$makale->okusay}}</small></br>
                 <p style="font-family: 'Raleway', sans-serif"> <b>{{$makale->icerik}}</b></p>
              @endforeach</br>

@@ -8,5 +8,5 @@ class Makale extends Model
 {
    protected $table ='makaleler';
 
-   protected $fillable=['baslik', 'icerik'];
+   protected $fillable=['baslik', 'icerik','slug'];
 }

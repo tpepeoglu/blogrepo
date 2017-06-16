@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Garf\LaravelPinger\Pinger;
 use Illuminate\Http\Request;
 use Validator;
 use App\Makale;
@@ -40,9 +41,9 @@ class MakaleController extends Controller
         return redirect()->back();
     }
 
-    public function makaleDetay($id){
+    public function makaleDetay($slug){
 
-        $makaledet = Makale::find($id);
+        $makaledet = Makale::where('slug',$slug)->first();
         $makaledet->okusay++ ;
         $makaledet->save();
         return view('makale',['makaledet'=>$makaledet]);
@@ -73,11 +74,14 @@ class MakaleController extends Controller
         //$makale->baslik=$request->baslik;
         //$makale->icerik=$request->icerik;
         //$makale->save();
+        $request->merge([
+            'slug' =>str_slug($request->baslik)
+        ]);
 
         Makale::create($request->all());
 
 
-
+        (new Pinger())->pingAll('baslik', 'http://localhost/laravel/public/makale/'.$request->slug, 'http://url.of/your-rss(optional)');
         return redirect()->back();
 
     }
